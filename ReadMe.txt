@@ -1,3 +1,6 @@
+If you are finding some methods to delete gallery image after camera intent photo taken, here is a useful way out: http://stackoverflow.com/questions/6390163/deleting-a-gallery-image-after-camera-intent-photo-taken
+Please note that the picture storage and thumbnail mechanism varies from manufacturers. 
+
 July 08, 2016 First Version
 
 The dropbox API use OAuth v2.
