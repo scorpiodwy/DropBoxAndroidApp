@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     final static private String APP_KEY = "azdrv2epggkccqe";
     final static private String APP_SECRET = "0dyrc7s7ogmr7i8";
 
-    String folder = "/storage/emulated/0/test/"; //internal folder to store temp image
+    String folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString()+"/100MEDIA/";
+//    String folder = "/storage/emulated/0/test/"; //internal folder to store temp image
 //    String file_name = "/screen.jpg";
 //    String file_path = Environment.getExternalStorageDirectory()
 //            .getAbsolutePath() + file_name;
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 //        Log.i("file", "start resume");
         super.onResume();
 
-        boolean link = mDBApi.getSession().isLinked();
-        Log.i("file", "before Resume Linked: "+link);
+//        boolean link = mDBApi.getSession().isLinked();
+//        Log.i("file", "before Resume Linked: "+link);
 
         if (mDBApi.getSession().authenticationSuccessful()) {
             try {
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 mDBApi.getSession().finishAuthentication();
 
                 String accessToken = mDBApi.getSession().getOAuth2AccessToken();
-                Log.i("file", "token: " + accessToken);
+//                Log.i("file", "token: " + accessToken);
                 //upload pic
                 if (pic_count != 0) {
                     new Upload(mDBApi, folder, pic_count).execute();
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         i.putExtra(MediaStore.EXTRA_OUTPUT, temp_uri);
         startActivityForResult(i, 0);
-        Log.i("Pic", "pic taken");
+//        Log.i("Pic", "pic taken");
     }
 
 

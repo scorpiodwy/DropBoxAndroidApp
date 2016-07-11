@@ -19,7 +19,8 @@ public class Upload extends AsyncTask<String, Void, String> {
     protected void onPreExecute(){}
 
     //remote folder
-    private String remote_folder="/1/";
+    private String remote_folder = "/1/"; //Version 1, July 01
+//    private String remote_folder = "/2/"; //Version 2
     private String internal_folder;
     private int pic_count;
 
@@ -55,11 +56,13 @@ public class Upload extends AsyncTask<String, Void, String> {
         }
 
         //delete pic in device
+        Log.i("File", "to be deleted file is:" + internal_folder+pic_count+".jpg");
         File todeleteFile = new File(internal_folder + pic_count + ".jpg");
+        Log.i("File", "is file existing: "+ todeleteFile.exists());
         if (todeleteFile != null) {
             todeleteFile.delete();
         }
-        Log.i("File", "file deleted"+pic_count);
+        Log.i("File", "file deleted "+pic_count);
         return response.rev;
     }
 

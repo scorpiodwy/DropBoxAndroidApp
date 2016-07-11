@@ -14,6 +14,9 @@ This picture will be stored on device temporarily, then uploaded to dropbox, and
 
 The functions of uploading to dropbox and deleting from local device are implemented in Upload.java.
 
-Next version
+July 10, 2016 Second version
 
-I plan to jump over the step of storing picture on local device and directly upload it to dropbox after it is taken.
+I planned to submit the picture directly to Dropbox without having a local temporary file, but this operation needs Dropbox pro account.
+As a result, I decide to give it up.
+In this version, I modify the internal folder to the default camera picture folder, which is Environment.DIRECTORY_DCIM. However, we still need to add a subfolder, “100MEDIA” in this sample, to determine which camera folder we want to use.
+	
